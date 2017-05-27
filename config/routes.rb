@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
  
+  devise_for :users
+  
  #URLが/blogsの時の処理
  resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
   collection do

@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,9 +43,10 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'twitter-bootstrap-rails'
-
 gem 'jquery-turbolinks'
+
+gem 'twitter-bootstrap-rails'
 
 gem 'rails_12factor', group: :production
 
+gem 'faker'
