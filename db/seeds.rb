@@ -9,7 +9,8 @@
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
-  User.create!(email: email,
+  User.create!(
+               email: email,
                password: password,
                password_confirmation: password,
                )
@@ -20,7 +21,8 @@ while n <= 100
   Blog.create(
     title: n.to_s+"テスト",
     content: n.to_s+"テスト",
-    user_id: n
+    user_id: n,
+    name: "テスト"
   )
   n = n + 1
 end
