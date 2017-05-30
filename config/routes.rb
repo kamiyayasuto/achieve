@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   end
  end
  
+ #letter_opener_webのrouting設定
+ if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+ end
+
  get 'contacts' => 'contacts#new'
  
  
