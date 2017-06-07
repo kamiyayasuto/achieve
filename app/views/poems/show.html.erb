@@ -1,5 +1,6 @@
 <h4>ポエム詳細</h4>
-<% @poems do |poem| %>
-  <%= poem.title %>
-  <%= poem.content %>
-<% end %>
+
+<p>タイトル:<%= @poem.title %></p>
+<p>内容:<%= @poem.content %></p>
+
+<p><%= link_to "一覧へ", poems_path %></p>

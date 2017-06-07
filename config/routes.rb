@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
  end
  #APIの処理
- resources :poems, only:[:index]
+ resources :poems, only:[:index,:show]
 
  #URLが/contactsの時の処理
  resources :contacts, only:[:new,:create] do
