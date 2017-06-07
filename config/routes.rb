@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   end
  end
  
-  get 'blogs' => 'blogs#index'
   
  #URLが/contactsの時の処理
  resources :contacts, only:[:new,:create] do
@@ -25,8 +24,6 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
  end
 
- get 'contacts' => 'contacts#new'
- 
  
  root 'top#index'
   
