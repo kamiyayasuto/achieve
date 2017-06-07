@@ -1,32 +1,33 @@
 Rails.application.routes.draw do
-  
- 
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  
+
  #URLが/blogsの時の処理
  resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
   collection do
    post :confirm
   end
  end
- 
-  
+ #APIの処理
+ resources :poems, only:[:index]
+
  #URLが/contactsの時の処理
  resources :contacts, only:[:new,:create] do
   collection do
    post :confirm
   end
  end
- 
+
  #letter_opener_webのrouting設定
  if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
  end
 
- 
+
  root 'top#index'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
