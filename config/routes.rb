@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
-  }
+  devise_for :users
 
  #URLが/blogsの時の処理
  resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
