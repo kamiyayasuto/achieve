@@ -32,7 +32,7 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 
+  gem 'dotenv-rails'
 end
 
 gem 'jquery-turbolinks'
@@ -60,6 +61,15 @@ gem 'rails_admin'
 gem 'cancan'
 
 gem 'activeresource'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+#image uploader
+gem 'carrierwave'
+
+gem 'rmagick'
 
 group :development do
   gem 'letter_opener_web'
