@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
     registrations: "users/registrations",
@@ -8,11 +7,16 @@ Rails.application.routes.draw do
   }
 
  #URLが/blogsの時の処理
- resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
-  collection do
-   post :confirm
-  end
+ resources :blogs do
+  resources :comments
+  post :confirm, on: :collection
  end
+ #resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
+  #collection do
+   #post :confirm
+ #end
+ #end
+
  #APIの処理
  resources :poems, only:[:index,:show]
 
