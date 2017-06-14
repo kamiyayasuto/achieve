@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
 
  #URLが/blogsの時の処理
- resources :blogs, [:index, :new, :create, :edit, :update, :destroy] do
+ resources :blogs do
   resources :comments
   post :confirm, on: :collection
  end
