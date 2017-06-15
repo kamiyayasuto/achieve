@@ -16,6 +16,11 @@ class CommentsController < ApplicationController
     end
   end
 
+　def update
+   @comment.update(comment_params)
+   redirect_to blogs_path,notice:"コメントを更新しました！"
+  end
+
   def destroy
      @comment = Comment.find(params[:id])
      @comment.destroy
