@@ -17,7 +17,8 @@ class CommentsController < ApplicationController
   end
 
 　def update
-   @comment.update(comment_params)
+   @comment = Comment.find(params[:id])
+   @comment.update
    respond_to do |format|
      format.js { render :index }
    end
