@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
        format.js { render :index }
      else
        format.html { render :index }
+     end
   end
 
   private
