@@ -3,7 +3,6 @@ class BlogsController < ApplicationController
   before_action :set_blog, only:[:show, :edit, :update, :destroy]
   def index
     @blogs = Blog.all
-    flash.now
   end
 
   # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
