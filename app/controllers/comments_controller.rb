@@ -20,7 +20,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     @comment = Comment.all
-    render: 'index'
+    # JS形式でレスポンスを返します。
+    format.js { render :index }
   end
 
   private
