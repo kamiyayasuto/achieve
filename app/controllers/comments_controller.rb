@@ -18,7 +18,9 @@ class CommentsController < ApplicationController
 
 　def update
    @comment.update(comment_params)
-   redirect_to blogs_path,notice:"更新しました！"
+   respond_to do |format|
+     format.js { render :index }
+   end
   end
 
   def destroy
