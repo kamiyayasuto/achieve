@@ -18,7 +18,13 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    # クライアント要求に応じてフォーマットを変更
+    respond_to do |format|
+     if @comment.destroy
+       # JS形式でレスポンスを返します。
+       format.js { render :index }
+     else
+       format.html { render :index }
   end
 
   private
