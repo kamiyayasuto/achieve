@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   end
 
 　def update
-   @comment.update(comment_params)
+   @blog.update(comment_params)
    redirect_to blogs_path,notice:"コメントを更新しました！"
   end
 
