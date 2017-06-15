@@ -16,14 +16,6 @@ class CommentsController < ApplicationController
     end
   end
 
-　def update
-   @comment = Comment.find(params[:id])
-   @comment.update
-   respond_to do |format|
-     format.js { render :index }
-   end
-  end
-
   def destroy
      @comment = Comment.find(params[:id])
      @comment.destroy
