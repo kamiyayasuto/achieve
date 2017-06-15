@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     @comment = Comment.all
+    render: 'index'
   end
 
   private
