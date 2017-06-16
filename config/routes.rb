@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
     registrations: "users/registrations",
@@ -36,7 +32,7 @@ end
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
  end
 
- resources :users, only: [:index]
+ resources :users, only: [:index, :show]
 
  resources :relationships, only: [:create, :destroy]
 
