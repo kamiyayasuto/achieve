@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw dos
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
@@ -11,11 +11,6 @@ resources :blogs do
   resources :comments
   post :confirm, on: :collection
 end
- #resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy] do
-  #collection do
-   #post :confirm
- #end
- #end
 
  #APIの処理
  resources :poems, only:[:index,:show]
@@ -35,6 +30,10 @@ end
  resources :users, only: [:index, :show]
 
  resources :relationships, only: [:create, :destroy]
+
+ resources :conversations do
+   resources :messages
+ end
 
  root 'top#index'
 
