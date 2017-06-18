@@ -5,10 +5,6 @@
     <% @notifications.each do |notification| %>
       <% if notification.read == true %>
         <div class="row">
-         <div class="col" id="col7">
-           <p class="img3"><%= profile_img(notification.comment.user,"blogs") if profile_img(notification.comment.user,"blogs") %></p>
-         </div>
-
          <div class="col" id="col8">
            既読
              <p>
@@ -19,10 +15,6 @@
          </div>
         <% else %>
           <div class="row" id="aliceblue">
-           <div class="col" id="col7">
-             <p class="img3"><%= profile_img(notification.comment.user,"blogs") if profile_img(notification.comment.user,"blogs") %></p>
-           </div>
-
            <div class="col" id="col8">
              未読
                <p>
