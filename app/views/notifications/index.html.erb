@@ -5,23 +5,19 @@
     <% @notifications.each do |notification| %>
       <% if notification.read == true %>
         <div class="row">
-         <div class="col" id="col8">
            既読
              <p>
                <%= notification.comment.user.try(:name) %>さんがあなたのブログ (<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>) にコメントしました。
              </p>
              <p><%= notification.created_at %></p>
-          </div>
          </div>
         <% else %>
-          <div class="row" id="aliceblue">
-           <div class="col" id="col8">
+          <div class="row">
              未読
                <p>
                  <%= notification.comment.user.try(:name) %>さんがあなたのブログ (<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>) にコメントしました。
                </p>
                <p><%= notification.created_at %></p>
-            </div>
            </div>
          <% end %>
     <% end %>
