@@ -74,3 +74,5 @@ gem 'rmagick'
 group :development do
   gem 'letter_opener_web'
 end
+
+ gem 'pusher'
