@@ -48,8 +48,6 @@ group :development do
   gem 'dotenv-rails'
 end
 
- gem 'pusher'
-
 gem 'jquery-turbolinks'
 
 gem 'twitter-bootstrap-rails'
